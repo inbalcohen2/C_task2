@@ -1,0 +1,22 @@
+CC= gcc
+FLAG= -Wall -g
+AR=ar -rcs
+OBJECTS_MAIN=main.o
+
+all: myBanks mains
+mains: $(OBJECTS_MAIN) libmyBank.a 
+	$(CC) $(FLAG) -o mains $(OBJECTS_MAIN) libmyBank.a
+
+functions: myBank.c
+	$(CC) $(FLAG) -c myBank.c
+
+main.o: main.c myBank.h
+	$(CC) $(FLAG) -c main.c 
+
+myBanks: myBank.o
+	$(AR) libmyBank.a myBank.o
+	
+.PHONY: clean all myBanks mains
+
+clean: 	
+	rm -f *.o *.a mains	
