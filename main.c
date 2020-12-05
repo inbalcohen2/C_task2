@@ -10,11 +10,11 @@ int main(){
 
     
     printf("\nPlease choose a transaction type:\n");
-   printf("O-Open Account\n B-Balance Inquiry\n D-Deposit\n W-Withdrawal\n C-Close Account\n I-Interest\n P-Print\n E-Exit\n");
+	  printf(" O-Open Account\n B-Balance Inquiry\n D-Deposit\n W-Withdrawal\n C-Close Account\n I-Interest\n P-Print\n E-Exit\n");
 
-   if(scanf(" %c",  &selection_func) != 1){
-	printf("\n Failed to read the transaction type\n");
-	}
+    if(scanf(" %c",  &selection_func) != 1){
+	  printf("\n Failed to read the transaction type\n");
+	  }
      else{
 
     switch (selection_func){
@@ -54,7 +54,7 @@ int main(){
 				break;
 
 			default:
-				printf("\nInvalid transaction type\n");
+				printf("Invalid transaction type\n");
                 break;
 			}
        }
